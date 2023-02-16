@@ -1,4 +1,4 @@
-# 개요 ( Playground Series - Season 3 Episode 6 )
+# Playground Series - Season 3 Episode 6
 <br>
 <div align="center">
   :smirk: platforms & Languages
