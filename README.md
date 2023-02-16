@@ -23,6 +23,7 @@
 <div><br></div>
 
 3.   스케일링
+  - 베이스 모델과 비교해 가장 점수가 높은 방식 선택
   - MinMax
   - MaxAbs
   - Standard
