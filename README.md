@@ -23,6 +23,9 @@
 <div><br></div>
 
 3.   스케일링
+  - MinMax
+  - MaxAbs
+  - Standard
 
 <div><br></div>
 
