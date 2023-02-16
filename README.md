@@ -116,16 +116,17 @@
 <div><br></div>
 
 ## heatmap 상관관계
-
+- squareMeters만 상관관계가 있음으로 보임 ( 상관계수 0.59 )
 <img src='./img/heatmap.png'>
 
-## EDA 결과
+## EDA 결과 ( 미완 )
 - 고유값 40개 미만 컬럼에서는 made가 변별력있는 데이터로 보였으나 pointplot 결과 관련성이 보이지 않았다.
 - 고유값이 많은 컬럼에서는 squareMeters이 가장 관련있는 데이터로 보여졌으며 다른컬럼에서는 산포도에서 정답에 필요한 데이터로 보이지 않았음
 
 <div><br></div>
 
 ## 이상치제거
+- 시각화한 자료를 바탕으로 이상치 기준 선정 후 제거
 - train = train.query("made != 10_000") 
 - train = train.query("squareMeters < 1e6")
 - train = train.query("floors < 1000")
@@ -137,19 +138,19 @@
 <div><br></div>
 
 ## 피처제거
-- id
-- cityCode
-- cityPartRange
+- 관련성이 적은 피처중 베이스모델에서 점수가 낮은 피처 제거
+- id : index 값이므로 제거
+- cityCode : 제거시 점수 상승
+- cityPartRange : 제거시 점수 상승
 
 <div><br></div>
 
 # 2. 베이스 모델
-
+- XGBRegressor 
 <div><br></div>
 
 ## 베이스 모델 학습
-XGBRegressor 사용
-제출 : 십만 몇점
+제출 : 101510 점
 
 <div><br></div>
 
@@ -158,22 +159,23 @@ XGBRegressor 사용
 
 <div><br></div>
 
-# 3. 스케일링
+# 3. 스케일링 ( 미완 ) 실제 값들의 크기 나열후 정리
 - MinMax
 - MaxAbs
 - Standard
 
 <div><br></div>
 
-# 4. 피처 튜닝
+# 4. 피처 튜닝  ( 미완 ) 점수
 - SelectKBest
 
 <div><br></div>
 
 ## 피처 튜닝
-SelectKBest 사용
-제출 : 십이만몇점
-모든 컬럼사용 결정
+- 베이스모델 학습후 파라미터별 중요도의 대부분이 squareMeters 이였기에 중요도로 피처를 줄여서 학습
+- SelectKBest 사용하여 5개의 중요 피처를 선별하여 학습
+- 제출 : 십이만몇점
+- 점수 상승이 없었기에 모든 컬럼사용 결정
 
 <div><br></div>
 
@@ -182,13 +184,14 @@ SelectKBest 사용
 <div><br></div>
 
 ## 모델 선정
-GBM 15만 8천
-XGB 15만
-LGBM 16만 9천
+- GBM, XGB, LGBM 3가지 모델로 선별 결과 가장점수가 높은 XGB모델 사용 결정
+- GBM 158829
+- XGB 151210
+- LGBM 169071
 
 <div><br></div>
 
-# 6. 하이퍼 파라미터 튜닝
+# 6. 하이퍼 파라미터 튜닝 ( 미완 ) 옵튜나 파라미터와 학습량 기제 
 - Optuna XGB
 
 <div><br></div>
@@ -202,5 +205,5 @@ LGBM 16만 9천
 
 <div><br></div>
 
-# 7. 풀데이터 활용
+# 7. 풀데이터 활용 ( 점수 측정  하기 )
 - 점수 : 측정
