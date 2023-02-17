@@ -95,6 +95,24 @@
 - 모두 수치형
 - 컬럼 개수가 많은것과 적은것으로 분류해 막대차트와 산포도로 표현 하면 좋아보임
 - 컬럼별 의미
+- squareMeters : 평수
+- numberOfRooms : 방 수
+- hasYard : 마당 여부
+- hasPool : 수영장 여부
+- floors : 층
+- cityCode : 도시코드
+- cityPartRange : 도시 범위           
+- numPrevOwners : 이전 소유자의 수
+- made : 언제 만들어 졌는지
+- isNewBuilt : 신축 여부
+- hasStormProtector : 폭풍 보호 기능
+- basement : 최하부
+- attic : 다락방 여부
+- garage : 차고 여부
+- hasStorageRoom : 창고 여부
+- hasGuestRoom : 게스트룸 여부
+- price : 가격
+- 
 <img src='./img/data.png'>
 
 <div><br></div>
@@ -170,7 +188,7 @@
 
 <div><br></div>
 
-# 4. 피처 튜닝  ( 미완 ) 점수
+# 4. 피처 튜닝
 - SelectKBest
 
 <div><br></div>
@@ -178,7 +196,8 @@
 ## 피처 튜닝
 - 베이스모델 학습후 파라미터별 중요도의 대부분이 squareMeters 이였기에 중요도로 피처를 줄여서 학습
 - SelectKBest 사용하여 5개의 중요 피처를 선별하여 학습
-- 제출 : 십이만몇점
+- 제출 KBest10 : 125245
+- 제출 KBest5 : 120301
 - 점수 상승이 없었기에 모든 컬럼사용 결정
 
 <div><br></div>
@@ -197,12 +216,12 @@
 
 # 6. 하이퍼 파라미터 튜닝 ( 미완 ) 옵튜나 파라미터와 학습량 기제 
 - Optuna XGB
-
+- Optuna 학습회수 100회 기준
 <div><br></div>
 
 ## 스코어 및 파라미터
 - 점수 : 146496
-- 파라미터 {
+- 최적 파라미터 {
 'learning_rate': 0.45,
 'n_estimators': 900,
 'max_depth': 7}
