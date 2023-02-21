@@ -1,29 +1,3 @@
-
-
-
-
-
-github 주소 입니다
-
-
-https://github.com/dkdlel395/project_2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Playground Series - Season 3 Episode 6
 <br>
 <div align="center">
@@ -123,7 +97,8 @@ https://github.com/dkdlel395/project_2
 
 
 <img src='./img/data.png'>
-<div font-size:180px;> 컬렴벌 의미 </div>
+
+## 컬렴벌 의미
 - squareMeters : 평수
 - numberOfRooms : 방 수
 - hasYard : 마당 여부
@@ -167,9 +142,10 @@ https://github.com/dkdlel395/project_2
 - squareMeters만 상관관계가 있음으로 보임 ( 상관계수 0.59 )
 <img src='./img/heatmap.png'>
 
-## EDA 결과 ( 미완 )
+## EDA 결과
 - 고유값 40개 미만 컬럼에서는 made가 변별력있는 데이터로 보였으나 pointplot 결과 관련성이 보이지 않았다.
 - 고유값이 많은 컬럼에서는 squareMeters이 가장 관련있는 데이터로 보여졌으며 다른컬럼에서는 산포도에서 정답에 필요한 데이터로 보이지 않았음
+- 상관관계에서 squareMeters만이 관련성이 매우 높기에 관련 없어보이는 컬럼 삭제 결정
 
 <div><br></div>
 
@@ -182,14 +158,14 @@ https://github.com/dkdlel395/project_2
 
 - 미제거 train = train.query("basement < 20_000")
 - 미제거 train = train.query("attic < 20_000")
+   - 미제거시 점수가 올라서 관련있는 이상치로 판단
 
 <div><br></div>
 
 ## 피처제거
 - 관련성이 적은 피처중 베이스모델에서 점수가 낮은 피처 제거
 - id : index 값이므로 제거
-- cityCode : 제거시 점수 상승
-- cityPartRange : 제거시 점수 상승
+- cityCode, cityPartRange : citycode만으로는 설명할 수 없는 부분이 있어 파생피처를 만들지 않으면 삭제 결정
 
 <div><br></div>
 
@@ -208,9 +184,9 @@ https://github.com/dkdlel395/project_2
 <div><br></div>
 
 # 3. 스케일링 ( 미완 ) 실제 값들의 크기 나열후 정리
-- MinMax
-- MaxAbs
-- Standard
+- MinMax 거의 비슷하나 점수가 오히려 조금떨어짐
+- MaxAbs 효과 없음
+- Standard 효과 없음
 
 <div><br></div>
 
@@ -232,7 +208,6 @@ https://github.com/dkdlel395/project_2
 
 <div><br></div>
 
-## 모델 선정
 - GBM, XGB, LGBM 3가지 모델로 선별 결과 가장점수가 높은 XGB모델 사용 결정
 - GBM 158829
 - XGB 151210
@@ -256,3 +231,5 @@ https://github.com/dkdlel395/project_2
 
 # 7. 풀데이터 활용 ( 점수 측정  하기 )
 - 점수 : 측정
+
+# 8. 최종 점수
