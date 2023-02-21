@@ -36,19 +36,19 @@ https://github.com/dkdlel395/project_2
 <br>
 
 
-1.   데이터 준비 및 분석
+<b>1.   데이터 준비 및 분석</b>
   - 데이터 준비
   - 시각화 및 분석
   
 <div><br></div>
 
-2.   베이스 모델
+<b>2.   베이스 모델</b>
   - xgb 베이스 모델 제작
   - feature_importance_ 확인
 
 <div><br></div>
 
-3.   스케일링
+<b>3.   스케일링</b>
   - 베이스 모델과 비교해 가장 점수가 높은 방식 선택
   - MinMax
   - MaxAbs
@@ -56,22 +56,22 @@ https://github.com/dkdlel395/project_2
 
 <div><br></div>
 
-4.   피처 튜닝
+<b>4.   피처 튜닝</b>
   - selector_best 5가지 선정하여 학습하여 결과 확인 후 피처 선정
 
 <div><br></div>
 
-5.   모델 선정
+<b>5.   모델 선정</b>
   - 대표 모델 gbm, xgb, lgbm 학습후 모델 선정
 
 <div><br></div>
 
-6.   하이퍼 파라미터 튜닝
+<b>6.   하이퍼 파라미터 튜닝</b>
   - Optuna를 사용하여 하이퍼 파라미터 튜닝
 
 <div><br></div>
 
-7.   풀데이터 활용
+<b>7.   풀데이터 활용</b>
   - 선정된 피처, 모델, 파라미터를 사용해 풀데이터로 학습
 
 <div><br></div>
@@ -84,34 +84,34 @@ https://github.com/dkdlel395/project_2
 
 <div><br></div>
 
-##  사용한 패키지
-- 기본 라이브러리
+##  <b>사용한 패키지</b>
+- <b>기본 라이브러리</b>
 - import pandas as pd 
 - import numpy as np 
 
 <div><br></div>
 
-- 시각화
+- <b>시각화</b>
 - import matplotlib.pyplot as plt
 - %matplotlib inline
 - import seaborn as sns
 
 <div><br></div>
 
-- 데이터 정제
+- <b>데이터 정제</b>
 - from sklearn.model_selection import train_test_split
 - from sklearn.metrics import mean_squared_error
 
 <div><br></div>
 
-- 학습 모델
+- <b>학습 모델</b>
 - from xgboost import XGBRegressor
 - from lightgbm import LGBMRegressor
 - import xgboost as xgb
 
 <div><br></div>
 
-- 피처 튜닝
+- <b>피처 튜닝</b>
 - from sklearn.feature_selection import f_regression, SelectKBest
 
 <div><br></div>
@@ -120,7 +120,10 @@ https://github.com/dkdlel395/project_2
 - 결측치가 없음
 - 모두 수치형
 - 컬럼 개수가 많은것과 적은것으로 분류해 막대차트와 산포도로 표현 하면 좋아보임
-- 컬럼별 의미
+
+
+<img src='./img/data.png'>
+<div font-size:180px;> 컬렴벌 의미 </div>
 - squareMeters : 평수
 - numberOfRooms : 방 수
 - hasYard : 마당 여부
@@ -138,9 +141,6 @@ https://github.com/dkdlel395/project_2
 - hasStorageRoom : 창고 여부
 - hasGuestRoom : 게스트룸 여부
 - price : 가격
-- 
-<img src='./img/data.png'>
-
 <div><br></div>
 
 ## 컬럼 분포도
