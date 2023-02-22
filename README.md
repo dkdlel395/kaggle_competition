@@ -50,9 +50,11 @@
 
 <div><br></div>
 - 검증 : RMSE
+- 모델 버전 : xgboost 0.90
 
 <div><br></div>
 <div><br></div>
+
 
 # 1. 데이터 준비 및 분석
 
