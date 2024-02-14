@@ -9,6 +9,9 @@
 </div>
 <br>
 
+<b> 최종 랭킹 18등 </b>
+<img src='./img/Episode6_rank.png'>
+
 
 <b>1.   데이터 준비 및 분석</b>
   - 데이터 준비
