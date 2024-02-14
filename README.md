@@ -9,7 +9,7 @@
 </div>
 <br>
 
-<b> 최종 랭킹 18등 </b>
+## 최종 랭킹 18등
 <img src='./img/Episode6_rank.png'>
 
 
